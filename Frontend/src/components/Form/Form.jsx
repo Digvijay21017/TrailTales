@@ -59,7 +59,7 @@ const Form = ({ currentId, setCurrentId }) => {
       dispatch(createPost({ ...postData, name: user?.result?.name }));
       clearForm();
     } else {
-      console.log(postData);
+      // console.log(postData);
       dispatch(
         updatePost(currentId, { ...postData, name: user?.result?.name })
       );
