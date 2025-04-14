@@ -1,0 +1,28 @@
+version: '3'
+services:
+  backend:
+    build: ./Backend
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - mern-net
+
+  frontend:
+    build:
+      context: ./Frontend
+      args:
+        REACT_APP_API_URL: ${REACT_APP_API_URL}  # Fetch from environment variable or .env file
+    ports:
+      - "80:80"
+    environment:
+      - REACT_APP_API_URL=${REACT_APP_API_URL}  # Use value from environment variable
+    env_file:
+      - ./Frontend/.env  # Explicitly use .env from Frontend folder
+    networks:
+      - mern-net
+
+networks:
+  mern-net:
+    driver: bridge

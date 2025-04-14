@@ -1,0 +1,17 @@
+# Prevent local dependencies from being copied
+node_modules
+npm-debug.log
+
+# Ignore environment files (you can mount them instead)
+.env
+.env.*  
+
+# Ignore system files
+.DS_Store
+
+# Ignore build output (React builds it fresh inside container)
+build
+
+# Optional: Ignore test-related files
+__tests__/
+coverage/
