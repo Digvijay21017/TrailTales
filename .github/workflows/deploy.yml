@@ -22,5 +22,8 @@ jobs:
           script: |
             cd TrailTales
             git pull origin deployment
+            export PORT=5000
+            export CONNECTION_URL="mongodb+srv://Digvijay:Digvijay07@memoriescluster.ethiptv.mongodb.net/?retryWrites=true&w=majority&appName=MemoriesCluster"
+            export VITE_GOOGLE_OAUTH_CLIENT_ID=1083018746351-hf2mu1qu9luabmg3eegqcqbq30041rdm.apps.googleusercontent.com
             docker-compose down
             docker-compose up --build -d
